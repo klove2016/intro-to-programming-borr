@@ -1,4 +1,3 @@
-KJ Loving
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,8 +6,19 @@ KJ Loving
       name="beginner code portfolio"
       content="Kj's beginner code projects"
     />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Crimson+Text&family=Mouse+Memoirs&family=Open+Sans&display=swap");
+    </style>
   </head>
   <body>
+    <div id="navBar">
+      <a href="#About">Home</a>
+      <a href="#mySkills">My Skills</a>
+      <a href="#About">About</a>
+      <a href="#messageSubmitForm">Contact</a>
+    </div>
+    <br />
     <section id="About">
       <h1>About</h1>
       <p>
@@ -19,25 +29,40 @@ KJ Loving
         find a hobby I haven't liked!
       </p>
     </section>
-    <section id="Experience">
+    <section id="experience">
       <h1>Experience</h1>
-      <p>
-        Most of my career experience since the pandemic has been in social work,
-        but over the last six months I've been working on a graphic design
-        portfolio and small coding projects. My pride and joy right now is a
-        'Whale Translator' that I programmed myself from scratch!
-      </p>
+      <ul>
+        <li>Aquatics 2013 - 2020</li>
+        <li>Social Work - Public Health 2020 - Present</li>
+        <li>Projects</li>
+      </ul>
     </section>
     <section id="mySkills">
       <h2>Skills</h2>
       <ul></ul>
     </section>
-    <section id="Connect">
-      <h1>Connect</h1>
-      <p>Hit me up below:</p>
-      <ul>
-        <li>Github:klove2016</li>
-      </ul>
+    <section id="contact">
+      <h1>Contact</h1>
+      <section id="messageSubmitForm">
+        <h2>Leave a Message</h2>
+        <form name="leave_message">
+          <label for="name" class="name">Name:</label>
+          <input type="text" name="name" class="name" required />
+          <br />
+          <label for="email" class="email">Email:</label>
+          <input type="email" name="email" class="email" required />
+          <br />
+          <label for="messge" class="textBox">Message:</label>
+          <textarea name="message" class="textBox" required></textarea>
+          <br />
+          <label for="submit" class="hitSubmit"></label>
+          <button type="submit" name="submit" class="hitSubmit">Submit</button>
+        </form>
+      </section>
+      <section id="messages">
+        <h2>Messages</h2>
+        <ul></ul>
+      </section>
     </section>
     <footer></footer>
     <script src="js/index.js"></script>
