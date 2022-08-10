@@ -1,4 +1,3 @@
-document.body.style.backgroundColor = "lightblue";
 const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector("footer");
@@ -6,7 +5,6 @@ const copyright = document.createElement("p");
 copyright.innerHTML = `KJ Loving ${thisYear}`;
 footer.appendChild(copyright);
 footer.style.fontSize = "large";
-footer.style.textAlign = "center";
 footer.style.fontWeight = "bold";
 footer.style.textDecoration = "underline";
 
@@ -18,7 +16,10 @@ skills.forEach((skill) => {
   skillItem.innerText = skill;
   skillsList.appendChild(skillItem);
 });
-
+skillsList.style.textAlign = "left";
+document.getElementById("contact").style.textAlign = "left";
+document.getElementById("contact").querySelector("h1").style.textAlign =
+  "center";
 const messageForm = document.getElementsByName("leave_message")[0];
 
 const nameRes = document.getElementsByName("name")[0];
@@ -34,6 +35,7 @@ let submitForm = function (e) {
   clientName = nameRes.value;
   clientEmail = emailRes.value;
   clientMessage = messageRes.value;
+
   const messageSection = document.getElementById("messages");
 
   const messageList = messageSection.querySelector("ul");
@@ -46,21 +48,18 @@ let submitForm = function (e) {
   const removeButton = document.createElement("button");
   removeButton.innerText = "Remove";
   removeButton.setAttribute("type", "button");
-  newMessage.appendChild(removeButton);
-  messageList.appendChild(newMessage);
-  console.log(newMessage);
   messageForm.reset();
   function removeComment() {
     entry = removeButton.parentNode;
     entry.remove();
   }
+  newMessage.appendChild(removeButton);
+  messageList.appendChild(newMessage);
   removeButton.addEventListener("click", removeComment);
 
   document.getElementById("messages").style.visibility = "visible";
 };
-
-submitButton.addEventListener("click", submitForm);
-
+messageForm.addEventListener("submit", submitForm);
 if (
   document.getElementById("messages").querySelector("ul").childElementCount ===
   0

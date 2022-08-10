@@ -1,0 +1,196 @@
+/* Universal Styles*/
+
+* {
+  color: rgb(112, 201, 248);
+  font-family: Open Sans, Amatic SC, Crimson Text, Mouse Memoirs;
+}
+/* Navigation Styles*/
+body {
+  margin: 0;
+  background-color: #0b185f;
+  width: 100%;
+}
+#navBar {
+  background-color: #01385a;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+#navBar a {
+  color: #eeeeee;
+  padding: 8%;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/*Section Spacing*/
+section {
+  padding: 15px;
+  box-sizing: border-box;
+}
+/*Heading Styles*/
+h1,
+h2 {
+  font-size: 20px;
+  font-weight: 200;
+  text-decoration: underline dotted 2px rgb(168, 168, 169);
+  letter-spacing: 4px;
+  color: rgb(157, 201, 250);
+}
+
+/*Skills Section Styles*/
+#mySkills ul li {
+  display: inline-block;
+  margin: 2%;
+  padding: 1% 2%;
+  list-style-position: outside;
+  box-sizing: border-box;
+  border: solid #8a8da0 3px;
+  border-radius: 5px;
+  font-size: large;
+  color: rgb(94, 212, 176);
+}
+
+/*Expierence Section Styles*/
+
+#experience ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+#experience li {
+  list-style: none;
+  text-align: center;
+  box-sizing: border-box;
+  border: solid #8a8da0 3px;
+  border-radius: 5px;
+  font-size: large;
+}
+#experience li:last-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+/* Contact Section Styles*/
+#contact {
+  display: inline-flex;
+  flex-flow: row wrap;
+  width: 100%;
+  min-height: 100%;
+  justify-content: space-evenly;
+}
+#contact h1 {
+  order: -1;
+  width: 100%;
+  text-align: center;
+  color: #a8b0e3;
+}
+/* Form Styling Section*/
+
+#messages {
+  width: 45%;
+}
+
+#messages ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+#messages li {
+  background-color: rgb(127, 236, 248);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-sizing: border-box;
+  border: solid #0f0f0d 2px;
+  border-radius: 5px;
+  font-size: large;
+  margin: 10px;
+}
+#messages a,
+#messages span {
+  justify-items: flex-start;
+  color: black;
+  margin: 0px 5px;
+  letter-spacing: 2px;
+}
+#messages button {
+  justify-self: flex-end;
+  box-sizing: border-box;
+  border: solid #0f0f0d 2px;
+  border-radius: 5px;
+  color: rgb(112, 159, 245);
+  background-color: #0b185f;
+  margin: 5px;
+}
+#messageSubmitForm {
+  width: 40%;
+}
+form {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.email,
+.name,
+.textBox {
+  margin: 2px 1px;
+}
+input.name,
+input.email {
+  flex-basis: 100%;
+  flex-grow: 2;
+}
+
+.textBox {
+  order: 0;
+}
+textarea.textBox {
+  flex-basis: 100%;
+}
+
+button.hitSubmit {
+  margin-left: 30%;
+  margin-right: 30%;
+  flex-grow: 3;
+  border: solid #15268a 3px;
+  border-radius: 5px;
+  background-color: rgb(52, 52, 244);
+  font-size: large;
+  color: rgb(5, 10, 8);
+}
+label.name,
+label.email,
+label.textBox {
+  box-sizing: border-box;
+  border: solid #15268a 3px;
+  border-radius: 5px;
+  background-color: rgb(52, 52, 244);
+  font-size: large;
+  color: rgb(10, 13, 12);
+}
+input.name,
+input.email,
+textarea.textBox {
+  box-sizing: border-box;
+  border: solid #158a3e 2px;
+  border-radius: 5px;
+  font-size: large;
+  color: rgb(0, 0, 0);
+}
+
+/*Footer Section Styles*/
+footer {
+  margin-bottom: -20px;
+  background-color: rgb(1, 82, 152);
+  padding: 0 10px;
+}
+
+footer p {
+  
+  padding: 10px;
+}
