@@ -11,23 +11,31 @@ body {
   width: 100%;
 }
 #navBar {
+  display:inline-flex;
+  height: 50px;
   background-color: #01385a;
   position: fixed;
   top: 0;
   width: 100%;
-  text-align: center;
+ justify-content:space-around;
+
+ 
 }
 #navBar a {
-  color: #9fe0ed;
-  padding: 8%;
+
+color: #9fe0ed;
+padding: 10px;
   text-decoration: none;
+  
   font-size: 18px;
 }
 
 /*Section Spacing*/
 section {
   padding: 15px;
+  
   box-sizing: border-box;
+  margin:20px;
 }
 /*Heading Styles*/
 h1,
