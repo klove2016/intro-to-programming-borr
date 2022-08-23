@@ -52,6 +52,12 @@ let submitForm = function (e) {
   function removeComment() {
     entry = removeButton.parentNode;
     entry.remove();
+    if (
+      document.getElementById("messages").querySelector("ul")
+        .childElementCount === 0
+    ) {
+      document.getElementById("messages").style.visibility = "hidden";
+    }
   }
   newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
@@ -60,6 +66,7 @@ let submitForm = function (e) {
   document.getElementById("messages").style.visibility = "visible";
 };
 messageForm.addEventListener("submit", submitForm);
+
 if (
   document.getElementById("messages").querySelector("ul").childElementCount ===
   0
