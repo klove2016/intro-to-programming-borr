@@ -193,12 +193,13 @@ textarea.textBox {
 
 /*Footer Section Styles*/
 footer {
-  margin-bottom: -20px;
+  
   background-color: rgb(1, 82, 152);
   width: 100%;
 }
 
 footer p {
+  margin-bottom: 0;
   padding: 10px;
 }
 /*Media Queries*/
