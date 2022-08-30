@@ -1,71 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>KJ's Portfolio</title>
-    <meta
-      name="beginner code portfolio"
-      content="Kj's beginner code projects"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Crimson+Text&family=Mouse+Memoirs&family=Open+Sans&display=swap");
-    </style>
-  </head>
-  <body>
-    <div id="navBar">
-      <a href="#About">Home</a>
-      <a href="#mySkills">My Skills</a>
-      <a href="#About">About</a>
-      <a href="#messageSubmitForm">Contact</a>
-    </div>
-    <br />
-    <section id="About">
-      <h1>About</h1>
-      <p>
-        My name is KJ. I was born and raised in WA state but relocated to Oregon
-        to be with my wife just over half a decade ago. When I'm not enjoying
-        family time with my wife and various pets, I can be found partaking in
-        one of my many hobbies. From video games to wood carving, I've yet to
-        find a hobby I haven't liked!
-      </p>
+
+<head>
+  <title>KJ's Portfolio</title>
+  <meta name="beginner code portfolio" content="KJ's beginner code projects" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/index.css" />
+  <script src="https://kit.fontawesome.com/fd2bed370a.js" crossorigin="anonymous"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Crimson+Text&family=Mouse+Memoirs&family=Open+Sans&display=swap");
+  </style>
+</head>
+
+<body>
+  <div id="navBar">
+    <a href="#About">Home</a>
+    <a href="#mySkills">My Skills</a>
+    <a href="#About">About</a>
+    <a href="#messageSubmitForm">Contact</a>
+  </div>
+  <br />
+  <section id="About">
+    <h1>About</h1>
+    <p>
+      My name is KJ. I was born and raised in WA state but relocated to Oregon
+      to be with my wife just over half a decade ago. When I'm not enjoying
+      family time with my wife and various pets, I can be found partaking in
+      one of my many hobbies. From video games to wood carving, I've yet to
+      find a hobby I haven't liked!
+    </p>
+  </section>
+  <section id="experience">
+    <h1>Experience</h1>
+    <ul>
+      <li>Aquatics 2013 - 2020</li>
+      <li>Social Work - Public Health 2020 - Present</li>
+    </ul>
+  </section>
+  <section id="mySkills">
+    <h2>Skills</h2>
+    <ul></ul>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul></ul>
+  </section>
+  <section id="contact">
+    <h1>Contact</h1>
+    <section id="messageSubmitForm">
+      <h2>Leave a Message</h2>
+      <form name="leave_message">
+        <label for="name" class="name">Name:</label>
+        <input type="text" name="name" class="name" required />
+        <br />
+        <label for="email" class="email">Email:</label>
+        <input type="email" name="email" class="email" required />
+        <br />
+        <label for="messge" class="textBox">Message:</label>
+        <textarea name="message" class="textBox" required></textarea>
+        <br />
+        <label for="submit" class="hitSubmit"></label>
+        <button type="submit" name="submit" class="hitSubmit">Submit</button>
+      </form>
     </section>
-    <section id="experience">
-      <h1>Experience</h1>
-      <ul>
-        <li>Aquatics 2013 - 2020</li>
-        <li>Social Work - Public Health 2020 - Present</li>
-        <li>Projects</li>
-      </ul>
-    </section>
-    <section id="mySkills">
-      <h2>Skills</h2>
+    <section id="messages">
+      <h2>Messages</h2>
       <ul></ul>
     </section>
-    <section id="contact">
-      <h1>Contact</h1>
-      <section id="messageSubmitForm">
-        <h2>Leave a Message</h2>
-        <form name="leave_message">
-          <label for="name" class="name">Name:</label>
-          <input type="text" name="name" class="name" required />
-          <br />
-          <label for="email" class="email">Email:</label>
-          <input type="email" name="email" class="email" required />
-          <br />
-          <label for="messge" class="textBox">Message:</label>
-          <textarea name="message" class="textBox" required></textarea>
-          <br />
-          <label for="submit" class="hitSubmit"></label>
-          <button type="submit" name="submit" class="hitSubmit">Submit</button>
-        </form>
-      </section>
-      <section id="messages">
-        <h2>Messages</h2>
-        <ul></ul>
-      </section>
-    </section>
-    <footer></footer>
-    <script src="js/index.js"></script>
-  </body>
+  </section>
+  <footer>
+    <ul class="icons">
+      <li>
+        <a href="https://discordapp.com/users/904974789620416542/" id="discord"><i
+            class="fa-brands fa-discord fa-2xl"></i></a>
+      </li>
+      <li>
+        <a href="https://github.com/klove2016" id="github"><i class="fa-brands fa-github fa-2xl"></i></a>
+      </li>
+      <li>
+        <a href="https://twitter.com/kj_loving/" id="twitter"><i class="fa-brands fa-twitter fa-2xl"></i></a>
+      </li>
+    </ul>
+  </footer>
+  <script src="js/index.js"></script>
+</body>
+
 </html>

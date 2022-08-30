@@ -2,7 +2,7 @@ const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector("footer");
 const copyright = document.createElement("p");
-copyright.innerHTML = `KJ Loving ${thisYear}`;
+copyright.innerHTML = `© KJ Loving ${thisYear}`;
 footer.appendChild(copyright);
 footer.style.fontSize = "large";
 footer.style.fontWeight = "bold";
@@ -73,3 +73,42 @@ if (
 ) {
   document.getElementById("messages").style.visibility = "hidden";
 }
+const githubRequest = new XMLHttpRequest();
+githubRequest.open("GET", "https://api.github.com/users/klove2016/repos");
+
+githubRequest.send();
+
+githubRequest.onload = function () {
+  const repos = JSON.parse(githubRequest.responseText);
+
+  const projectSection = document.getElementById("projects");
+  const projectList = projectSection.querySelector("ul");
+  for (let i = 0; i < repos.length; i++) {
+    eachRepo = repos[i];
+    project = document.createElement("li");
+    const repoStrName = eachRepo.name.toString();
+    const repoNoDashName = repoStrName.replaceAll("-", " ");
+    const repoRealName = repoNoDashName.split(" ");
+    for (let i = 0; i < repoRealName.length; i++) {
+      if (repoRealName[i].length > 3) {
+        repoRealName[i] =
+          repoRealName[i][0].toUpperCase() + repoRealName[i].substr(1) + " ";
+      } else {
+        repoRealName[i] = repoRealName[i] + " ";
+      }
+    }
+    const createdAt =
+      eachRepo.created_at.slice(5, 10) +
+      "-" +
+      eachRepo.created_at.substring(0, 4);
+    const updatedAt =
+      eachRepo.updated_at.slice(5, 10) +
+      "-" +
+      eachRepo.updated_at.substring(0, 4);
+    project.innerHTML = `<a  href="${eachRepo.html_url}">${repoRealName.join("")}</a> <p> Created on: ${createdAt}</p> <p> Last updated: ${updatedAt}  </p> <p> Description: ${
+      eachRepo.description
+    }</p>`;
+    console.log(eachRepo);
+    projectList.appendChild(project);
+  }
+};
