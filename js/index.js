@@ -73,22 +73,17 @@ if (
 ) {
   document.getElementById("messages").style.visibility = "hidden";
 }
-const githubRequest = new XMLHttpRequest();
-githubRequest.open("GET", "https://api.github.com/users/klove2016/repos");
 
-githubRequest.send();
 
-githubRequest.onload = function () {
-  const repos = JSON.parse(githubRequest.responseText);
-
+fetch ('https://api.github.com/users/klove2016/repos').then(response => {
+  return response.json();
+  }).then(function(data){
   const projectSection = document.getElementById("projects");
   const projectList = projectSection.querySelector("ul");
-  for (let i = 0; i < repos.length; i++) {
-    eachRepo = repos[i];
+  for (let i = 0; i < data.length; i++) {
+    eachRepo = data[i];
     project = document.createElement("li");
-    const repoStrName = eachRepo.name.toString();
-    const repoNoDashName = repoStrName.replaceAll("-", " ");
-    const repoRealName = repoNoDashName.split(" ");
+    const repoRealName = eachRepo.name.split("-");
     for (let i = 0; i < repoRealName.length; i++) {
       if (repoRealName[i].length > 3) {
         repoRealName[i] =
@@ -108,7 +103,13 @@ githubRequest.onload = function () {
     project.innerHTML = `<a  href="${eachRepo.html_url}">${repoRealName.join("")}</a> <p> Created on: ${createdAt}</p> <p> Last updated: ${updatedAt}  </p> <p> Description: ${
       eachRepo.description
     }</p>`;
-    console.log(eachRepo);
     projectList.appendChild(project);
   }
-};
+}).catch((error) => {
+  console.error(error);
+  const projectSectionError = document.getElementById("projects");
+  cannotFind = document.createElement("p");
+  cannotFind.setAttribute('id','error');
+  cannotFind.innerText = ' Cannot pull projects from Github at this time.';
+  projectSectionError.appendChild(cannotFind);
+})

@@ -85,6 +85,14 @@ h2 {
 }
 
 /*Project Section*/
+#error{
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  border: solid #8a8da0 3px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
 #projects li {
   padding: 5px 5px 5px 5px;
   border-radius: 10px;
