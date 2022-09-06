@@ -81,17 +81,12 @@ fetch ('https://api.github.com/users/klove2016/repos').then(response => {
   const projectSection = document.getElementById("projects");
   const projectList = projectSection.querySelector("ul");
   for (let i = 0; i < data.length; i++) {
-    eachRepo = data[i];
-    project = document.createElement("li");
+    const eachRepo = data[i];
+    const project = document.createElement("li");
     const repoRealName = eachRepo.name.split("-");
-    for (let i = 0; i < repoRealName.length; i++) {
-      if (repoRealName[i].length > 3) {
-        repoRealName[i] =
-          repoRealName[i][0].toUpperCase() + repoRealName[i].substr(1) + " ";
-      } else {
-        repoRealName[i] = repoRealName[i] + " ";
-      }
-    }
+    const repoNameShown = repoRealName.map(nameWord => (
+      nameWord.length > 3 ? nameWord[0].toUpperCase() + nameWord.substr(1) : nameWord
+    )).join(' ');
     const createdAt =
       eachRepo.created_at.slice(5, 10) +
       "-" +
@@ -100,7 +95,7 @@ fetch ('https://api.github.com/users/klove2016/repos').then(response => {
       eachRepo.updated_at.slice(5, 10) +
       "-" +
       eachRepo.updated_at.substring(0, 4);
-    project.innerHTML = `<a  href="${eachRepo.html_url}">${repoRealName.join("")}</a> <p> Created on: ${createdAt}</p> <p> Last updated: ${updatedAt}  </p> <p> Description: ${
+    project.innerHTML = `<a  href="${eachRepo.html_url}">${repoNameShown}</a> <p> Created on: ${createdAt}</p> <p> Last updated: ${updatedAt}  </p> <p> Description: ${
       eachRepo.description
     }</p>`;
     projectList.appendChild(project);
