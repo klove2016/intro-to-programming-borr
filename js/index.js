@@ -4,10 +4,6 @@ const footer = document.querySelector("footer");
 const copyright = document.createElement("p");
 copyright.innerHTML = `© KJ Loving ${thisYear}`;
 footer.appendChild(copyright);
-footer.style.fontSize = "large";
-footer.style.fontWeight = "bold";
-footer.style.textDecoration = "underline";
-
 const skills = ["JS", "HTML", "CSS"];
 const skillsSection = document.getElementById("mySkills");
 const skillsList = skillsSection.querySelector("ul");
@@ -56,14 +52,16 @@ let submitForm = function (e) {
       document.getElementById("messages").querySelector("ul")
         .childElementCount === 0
     ) {
-      document.getElementById("messages").style.visibility = "hidden";
+      document.getElementById("messages").style.display = "none";
+      document.getElementById("messageSubmitForm").style.width = '100%';
     }
   }
   newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
   removeButton.addEventListener("click", removeComment);
+  document.getElementById("messageSubmitForm").style.width = '';
 
-  document.getElementById("messages").style.visibility = "visible";
+  document.getElementById("messages").style.display = "";
 };
 messageForm.addEventListener("submit", submitForm);
 
@@ -71,7 +69,8 @@ if (
   document.getElementById("messages").querySelector("ul").childElementCount ===
   0
 ) {
-  document.getElementById("messages").style.visibility = "hidden";
+  document.getElementById("messages").style.display = "none";
+  document.getElementById("messageSubmitForm").style.width = '100%';
 }
 
 
@@ -95,7 +94,7 @@ fetch ('https://api.github.com/users/klove2016/repos').then(response => {
       eachRepo.updated_at.slice(5, 10) +
       "-" +
       eachRepo.updated_at.substring(0, 4);
-    project.innerHTML = `<a  href="${eachRepo.html_url}">${repoNameShown}</a> <p> Created on: ${createdAt}</p> <p> Last updated: ${updatedAt}  </p> <p> Description: ${
+    project.innerHTML = `<span class='arrow'>&#10095</span> <a  href="${eachRepo.html_url}">${repoNameShown}</a> <p>Created on: ${createdAt}</p> <p> Last updated: ${updatedAt}  </p> <p> Description: ${
       eachRepo.description
     }</p>`;
     projectList.appendChild(project);
